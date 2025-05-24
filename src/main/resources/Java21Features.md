@@ -1,7 +1,3 @@
-# javaprograms
-This project contains several java programs
-
-
 Java 21 features::
 - Record Patterns (JEP 440)
 	Finalized feature allowing destructuring of record class instances in pattern matching.
