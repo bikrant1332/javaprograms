@@ -1,8 +1,9 @@
-Java 21 features::
+Java 21 features details:
+===========================
 - Record Patterns (JEP 440)
-	Finalized feature allowing destructuring of record class instances in pattern matching.
-	Enables concise and composable data queries with nested patterns.
-	Example:
+  The finalized feature allows the destructuring of record class instances in pattern matching.
+  Enables concise and composable data queries with nested patterns.
+  Example:
 	record Point(int x, int y) {}
 	public static int sumPoint(Object obj) {
 	  if (obj instanceof Point(int x, int y)) {
@@ -11,13 +12,13 @@ Java 21 features::
 	  return 0;
 	}
 - Pattern Matching for switch (JEP 441)
-	Enhances switch statements to support pattern matching, making code more expressive and concise.
-	example:
-		record Point(int x, int y) { }
-		enum Color { RED, GREEN, BLUE; }
-		static void typeTester(Object obj) {
-	    switch (obj) {
-	        case null -> System.out.println("null");
+  Enhances switch statements to support pattern matching, making code more expressive and concise.
+  example:
+	record Point(int x, int y) { }
+	enum Color { RED, GREEN, BLUE; }
+	static void typeTester(Object obj) {
+	switch (obj) {
+		case null -> System.out.println("null");
 	        case String s -> System.out.println("String: " + s);
 	        case Color c -> System.out.println("Color with " + c.values().length + " values");
 	        case Point p -> System.out.println("Record class: " + p);
@@ -25,13 +26,12 @@ Java 21 features::
 	        default -> System.out.println("Something else");
 	    }
 	}
-	In this example, the switch expression matches the selector obj against various patterns including null, a String, an enum Color, a record Point, and an 	array of integers. Each case binds the matched value to a variable (s, c, p, ia) which can then be used directly in the case block without explicit casting. The default case handles any other unmatched types
-
+	In this example, the switch expression matches the selector obj against various patterns, including null, a String, an enum Color, a record Point, and an array of integers. Each case binds the matched value to a variable (s, c, p, ia) which can then be used directly in the case block without explicit casting. The default case handles any other unmatched types
 - Sequenced Collections
-	Introduces new interfaces: SequencedCollection, SequencedSet, and SequencedMap.
-	These collections maintain a predefined encounter order, allowing direct access to first and last elements.
-	Useful for collections where element order and predecessor/successor relations matter.
-	This interface provides methods to access and manipulate elements at both ends of a collection, such as addFirst(), addLast(), getFirst(), getLast(), and also a reversed() view.
+  Introduces new interfaces: SequencedCollection, SequencedSet, and SequencedMap.
+  These collections maintain a predefined encounter order, allowing direct access to first and last elements.
+  Useful for collections where element order and predecessor/successor relations matter.
+  This interface provides methods to access and manipulate elements at both ends of a collection, such as addFirst(), addLast(), getFirst(), getLast(), and also a reversed() view.
 Example:
 import java.util.ArrayList;
 import java.util.SequencedCollection;
